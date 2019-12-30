@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<section>
+	<h2>About</h2>
+	<p>This site explains decades and how years are categorized. </p>
+</section>
+<section>
+	<h2>Current Year</h2>
+	<p>Because it is currently {{ site.time | date: '%Y' }}, I am assuming you want to look at that year: <a href="{{ site.url }}/{{ site.time | date: '%Y' }}">{{ site.time | date: '%Y' }}</a></p>
+	<p>However, you can alternatively look at any year within reason.</p>
+</section>
