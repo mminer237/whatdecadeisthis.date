@@ -23,7 +23,11 @@ module Jekyll
 			self.process(@name)
 			self.data ||= {}
 			self.data['layout'] = 'year'
-			year = Integer(name.rpartition('.').first)
+			if name == "year-404.md"
+				year = 404
+			else
+				year = Integer(name.rpartition('.').first)
+			end
 			self.data['title'] = year
 			decade = (year / 10.0).ceil()
 			self.data['ordinalDecade'] = decade.to_s + Jekyll.ordinal(decade)
@@ -35,7 +39,11 @@ module Jekyll
 		def generate(site)
 			years = (1..Integer(site.config['lastYear']))
 			years.each do |year|
-				name = "#{year}.md"
+				if year == 404
+					name = "year-404.md"
+				else
+					name = "#{year}.md"
+				end
 				puts name
 				page = Jekyll::YearPage.new(site, site.source, @dir, name)
 				# page.data['title'] = year
