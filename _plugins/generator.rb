@@ -26,8 +26,8 @@ module Jekyll
 			year = Integer(name.rpartition('.').first)
 			self.data['title'] = year
 			decade = (year / 10.0).ceil()
-			self.data['decade'] = decade.to_s + Jekyll.ordinal(decade)
-			self.data['digitDecade'] = (year / 10 + 1).to_s + '0s'
+			self.data['ordinalDecade'] = decade.to_s + Jekyll.ordinal(decade)
+			self.data['cardinalDecade'] = (year / 10 + 1).to_s + '0s'
 		end
 	end
 
