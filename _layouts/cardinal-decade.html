@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<section>
+	<p>The {{ page.title }} is a <a href="/cardinal-decade">cardinal decade</a>, which contains
+		{% if page.first_year == 0 -%}
+			nine
+		{%- else -%}
+			ten
+		{%- endif %}
+		years:</p>
+	<ul>
+		{% for i in (0..9) -%}
+			{%- assign year = page.first_year | plus: i -%}
+			{%- if year != 0 -%}
+				{%- if year == 404 -%}
+					<li><a href="/year-404">404</a></li>
+				{%- else -%}
+					<li><a href="/{{ year }}">{{ year }}</a></li>
+				{%- endif -%}
+			{%- endif -%}
+		{%- endfor %}
+	</ul>
+</section>

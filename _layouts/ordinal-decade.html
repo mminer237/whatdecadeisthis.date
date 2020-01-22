@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<section>
+	<p>The {{ page.decade }}{{ page.ordinal }} decade is an <a href="/ordinal-decade">ordinal decade</a>, which contains ten years:</p>
+	<ul>
+		{%- assign base = page.decade | minus: 1 %}
+		{% for i in (1..9) -%}
+			{%- assign year = base | times: 10 | plus: i -%}
+			{%- if year == 404 -%}
+				<li><a href="/year-404">404</a></li>
+			{%- else -%}
+				<li><a href="/{{ year }}">{{ year }}</a></li>
+			{%- endif -%}
+		{%- endfor %}
+		<li><a href="/{{ page.decade }}0">{{ page.decade }}0</a></li>
+	</ul>
+</section>
