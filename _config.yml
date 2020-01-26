@@ -25,7 +25,8 @@ defaults:
 collections:
   pages:
     output: true
-    permalink: /:path
+
+permalink: /:path
 
 sass:
   style: compressed
