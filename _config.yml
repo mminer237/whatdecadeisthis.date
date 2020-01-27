@@ -26,7 +26,7 @@ collections:
   pages:
     output: true
 
-permalink: /:path
+permalink: /:name
 
 sass:
   style: compressed
