@@ -61,12 +61,12 @@ nav {
 	font-size: 20px;
 	font-weight: bold;
 	margin: 15px auto 5px;
-	max-width: 700px;
+	max-width: 720px;
 	width: 100%;
 }
 nav>ul {
 	display: inline-flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: stretch;
 }
 nav ul {
@@ -76,7 +76,6 @@ nav ul {
 	width: 101%;
 }
 nav ul>li {
-	flex: 1 1 auto;
 	margin-right: 1%;
 	text-align: center;
 }
