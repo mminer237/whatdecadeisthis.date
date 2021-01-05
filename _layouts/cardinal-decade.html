@@ -3,7 +3,7 @@ layout: default
 ---
 
 <section>
-	<p>The {{ page.title }} is a <a href="/cardinal-decade">cardinal decade</a>, which contains
+	<p>The {{ page.title }} is a <a href="{% link _pages/cardinal-decade.html %}">cardinal decade</a>, which contains
 		{% if page.first_year == 0 -%}
 			nine
 		{%- else -%}

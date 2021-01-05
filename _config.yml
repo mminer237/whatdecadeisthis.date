@@ -25,6 +25,7 @@ defaults:
 collections:
   pages:
     output: true
+    permalink: /:name
 
 permalink: /:name
 
@@ -34,3 +35,6 @@ sass:
 plugins:
   - jekyll-sitemap
   - generator
+  
+include:
+  - _redirects
