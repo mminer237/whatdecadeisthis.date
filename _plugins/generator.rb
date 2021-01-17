@@ -32,6 +32,9 @@ module Jekyll
 			decade = (year / 10.0).ceil()
 			self.data['ordinalDecade'] = decade.to_s + Jekyll.ordinal(decade)
 			self.data['cardinalDecade'] = (year / 10).to_s + '0s'
+			if self.data['cardinalDecade'] == "00s"
+				self.data['cardinalDecade'] = "0s"
+			end
 		end
 	end
 
