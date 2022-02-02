@@ -3,6 +3,7 @@ layout: default
 ---
 
 <section>
+	<h2>The {{ page.decade }}{{ page.ordinal }} Decade</h2>
 	<p>The {{ page.decade }}{{ page.ordinal }} decade is an <a href="{% link _pages/ordinal-decade.html %}">ordinal decade</a>, which contains ten years:</p>
 	<ul>
 		{%- assign base = page.decade | minus: 1 %}
