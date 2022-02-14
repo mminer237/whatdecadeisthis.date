@@ -23,4 +23,7 @@ layout: default
 			{%- endif -%}
 		{%- endfor %}
 	</ul>
+	{% if page.first_year == 0 -%}
+		<p>Note that <a href="/0">there is no year 0</a>.</p>
+	{%- endif %}
 </section>
