@@ -29,6 +29,7 @@ module Jekyll
 				year = Integer(name.rpartition('.').first)
 			end
 			self.data['title'] = year
+			self.data['full_title'] = "What Decade is #{year}?"
 			decade = (year / 10.0).ceil()
 			self.data['ordinalDecade'] = decade.to_s + Jekyll.ordinal(decade)
 			self.data['cardinalDecade'] = (year / 10).to_s + '0s'
