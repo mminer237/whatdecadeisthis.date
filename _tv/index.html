@@ -1,0 +1,18 @@
+---
+layout: default
+title: TV Shows
+---
+
+<section>
+	<h2>TV Shows</h2>
+	<p>Many TV shows have been set in different decades:</p>
+	<ul>
+		{% for show in site.tv %}
+			{% if show.slug == "index" and show.title != "TV Shows" %}
+				{% assign url_size = show.url | split: "" | size | minus: 5 %}
+				{% assign url = show.url | slice: 0, url_size %}
+				<li><a href="{{ url }}">{{ show.show_title }}</a></li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+</section>

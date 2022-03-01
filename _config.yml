@@ -23,11 +23,24 @@ defaults:
       path: ""
     values:
       layout: "default"
+  -
+    scope:
+      path: "_tv/*/"
+    values:
+      layout: "tv-episode"
+  -
+    scope:
+      path: "_tv/*/index.md"
+    values:
+      layout: "tv-index"
 
 collections:
   pages:
     output: true
     permalink: /:name
+  tv:
+    output: true
+    permalink: /:collection/:path
 
 permalink: /:name
 

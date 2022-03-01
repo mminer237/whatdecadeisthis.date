@@ -140,6 +140,17 @@ a {
 li:not(:last-child) {
 	margin-bottom: 8px;
 }
+.episode-list {
+	border: var(--text-color) solid 2px;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.28);
+	display: inline-block;
+	margin: 0;
+	padding: 4px 8px;
+	summary {
+		font-size: 17px;
+	}
+}
 footer {
 	color: #EEE;
 	padding: 20px;
