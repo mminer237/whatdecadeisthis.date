@@ -74,7 +74,7 @@ module Jekyll
 	end
 
 	class CardinalDecadePage < Page
-		def initialize(site, base, dir, name)
+		def initialize(site, base, dir, name, close_ordinal_name)
 			@site = site
 			@base = base
 			@dir = dir
@@ -85,6 +85,8 @@ module Jekyll
 			decade_name = name.rpartition('.').first
 			self.data['title'] = decade_name
 			self.data['first_year'] = Integer(decade_name.rpartition('s').first)
+			self.data['close_ordinal_url'] = close_ordinal_name[0..-3-1]
+			self.data['close_ordinal'] = close_ordinal_name.partition('-').first
 		end
 	end
 
@@ -103,7 +105,7 @@ module Jekyll
 					cardinal_name = "#{decade - 1}0s.md"
 				end
 				# puts cardinal_name
-				page = Jekyll::CardinalDecadePage.new(site, site.source, @dir, cardinal_name)
+				page = Jekyll::CardinalDecadePage.new(site, site.source, @dir, cardinal_name, ordinal_name)
 				site.pages << page
 			end
 		end
