@@ -61,7 +61,7 @@ nav {
 	font-size: 20px;
 	font-weight: bold;
 	margin: 15px auto 5px;
-	max-width: 720px;
+	max-width: 780px;
 	width: 100%;
 }
 nav>ul {
@@ -76,8 +76,11 @@ nav ul {
 	width: 101%;
 }
 nav ul>li {
-	margin-right: 1%;
+	margin-right: 0.7%;
 	text-align: center;
+}
+nav ul>li:last-child {
+	margin-right: 0;
 }
 nav ul li {
 	margin-bottom: 0 !important;
@@ -90,7 +93,7 @@ nav ul li a {
 	cursor: pointer;
 	display: inline-block;
 	height: 100%;
-	padding: 9px 15px !important;
+	padding: 9px 10px !important;
 }
 nav ul li a:hover {
 	background-color: $light-primary-color !important;
@@ -107,11 +110,11 @@ section, article, details {
 	background-color: var(--text-background-color);
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
 	color: var(--text-color);
-	max-width: 700px;
+	max-width: 760px;
 	margin: 15px auto;
 	padding: 10px;
 	img {
-		max-width: 700px;
+		max-width: 760px;
 	}
 }
 h2, h2 a, h3, h4, h5, h6, summary {
