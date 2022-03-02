@@ -10,7 +10,7 @@
 	{% for episode in site.tv %}
 		{% assign last_5 = episode.url | slice: -5, 5 %}
 		{% if episode.show_title == page.show_title and last_5 != "index" %}
-			<li><a href="{{ episode.url }}">{{ episode.title }}</a></li>
+			<li><a href="{{ episode.url }}">{{ episode.title }} – {{ episode.episode_title }}</a></li>
 		{% endif %}
 	{% endfor %}
 	</ul>
