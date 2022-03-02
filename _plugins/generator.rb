@@ -48,7 +48,7 @@ module Jekyll
 				else
 					name = "#{year}.md"
 				end
-				puts name
+				# puts name
 				page = Jekyll::YearPage.new(site, site.source, @dir, name)
 				# page.data['title'] = year
 				# page.data['layout'] = 'year'
@@ -93,7 +93,7 @@ module Jekyll
 			decades = (1..(Integer((site.config['lastYear']) / 10.0).ceil() + 1))
 			decades.each do |decade|
 				ordinal_name = "#{decade}#{Jekyll.ordinal(decade)}-decade.md"
-				puts ordinal_name
+				# puts ordinal_name
 				page = Jekyll::OrdinalDecadePage.new(site, site.source, @dir, ordinal_name, decade)
 				site.pages << page
 
@@ -102,7 +102,7 @@ module Jekyll
 				else
 					cardinal_name = "#{decade - 1}0s.md"
 				end
-				puts cardinal_name
+				# puts cardinal_name
 				page = Jekyll::CardinalDecadePage.new(site, site.source, @dir, cardinal_name)
 				site.pages << page
 			end
