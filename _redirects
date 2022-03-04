@@ -1,2 +1,10 @@
+---
+layout: none
+---
 /pages/*    /:splat 302
 /the-aughts /2000s  302
+/-0         /0      302
+{% for n in (1..site.lastYear) -%}
+/-{{ n }}	/negative-years?year={{ n }}	302
+/{{ n }}-bc	/negative-years?year={{ n }}	302
+{% endfor -%}
