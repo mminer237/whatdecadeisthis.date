@@ -1,5 +1,7 @@
 ---
 layout: default
+scripts:
+  - /js/search.js
 ---
 
 <section>
@@ -10,4 +12,19 @@ layout: default
 	<h2>Current Year</h2>
 	<p>Because it is currently {{ site.time | date: '%Y' }}, I am assuming you want to look at that year: <a href="{{ site.url }}/{{ site.time | date: '%Y' }}">{{ site.time | date: '%Y' }}</a></p>
 	<p>However, you can alternatively look at any year within reason.</p>
+</section>
+<section id="search-section">
+	<h2 id="search-header">Go To Year</h2>
+	<form>
+		<input id="search-box" aria-labelledby="search-header" type="number" min="-{{ site.lastYear }}" max="{{ site.lastYear }}" autocomplete="off">
+		<button id="search-button">Go To Year</button>
+	</form>
+	<noscript>
+		<style>
+			#search-box {
+				display: none;
+			}
+		</style>
+		You will have to type the year manually in the URL without JS.
+	</noscript></div>
 </section>

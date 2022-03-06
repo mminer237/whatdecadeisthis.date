@@ -5,8 +5,8 @@ $darkish-primary-color: #222;
 $primary-color: #353535;
 $lightish-primary-color: #484848;
 $light-primary-color: #606060;
-// $dark-secondary-color: hsl(55, 81%, 15%);
-// $darkish-secondary-color: hsl(55, 31%, 40%);
+$dark-secondary-color: hsl(183, 81%, 15%);
+$darkish-secondary-color: hsl(183, 100%, 38%);
 $secondary-color: #20D8E0;
 $lightish-secondary-color: hsl(183, 76%, 70%);
 // $light-secondary-color: hsl(55, 100%, 80%);
@@ -139,6 +139,42 @@ p:last-child {
 }
 a {
 	color: $secondary-color;
+}
+#search-section form {
+	display: flex;
+	button {
+		height: 30px;
+		margin-left: 5px;
+	}
+}
+#search-box {
+	box-sizing: border-box;
+	flex-grow: 1;
+	font-size: 18px;
+	height: 30px;
+}
+input[type="number"] {
+	background-color: $dark-secondary-color;
+	border: 1px solid $darkish-secondary-color;
+	color: white;
+	padding: 4px 5px;
+	-moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+button {
+	background-color: $darkish-secondary-color;border: none;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.14);
+	color: #EEE;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 5px 8px;
+}
+button:hover {
+	filter: brightness(1.14);
 }
 li:not(:last-child) {
 	margin-bottom: 8px;
