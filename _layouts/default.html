@@ -44,9 +44,13 @@
 		<!-- End Google Tag Manager (noscript) -->{% endif %}
 		{% include header.html %}
 		{% include nav.html %}
-		<main>
-			{{ content }}
-		</main>
+		<div class="content-container">
+			<aside class="left ad"><div>{% include adsense-vertical-ad.html %}</div></aside>
+			<aside class="right ad"><div>{% include adsense-vertical-ad.html %}</div></aside>
+			<main>
+				{{ content }}
+			</main>
+		</div>
 		{% include footer.html %}
 	</body>
 </html>
