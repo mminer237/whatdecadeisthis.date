@@ -1,11 +1,12 @@
 ---
+layout: none
 ---
 "use strict";
 
 const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.has("year")) {
 	const year = urlParams.get("year");
-	const yearUrl = (searchBox.value <= {{ site.lastYear }}) ?
+	const yearUrl = (year <= {{ site.lastYear }}) ?
 		('404' ? 'year-404' : year)
 	:
 		`/other-year?year=${year}`;
