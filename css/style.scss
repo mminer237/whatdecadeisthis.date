@@ -105,6 +105,7 @@ nav a {
 aside {
 	padding: 5px;
 	z-index: 60;
+	width: calc((100vw - 760px)/2);
 }
 aside .adsbygoogle {
 	max-width: 305px;
