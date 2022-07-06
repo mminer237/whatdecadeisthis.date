@@ -15,6 +15,7 @@ $lightish-secondary-color: hsl(183, 76%, 70%);
 	--text-background-color: $darkish-primary-color;
 }
 body {
+	accent-color: $lightish-secondary-color;
 	background-color: $primary-color;
 	display: flex;
 	flex-direction: column;
@@ -38,6 +39,7 @@ header {
 		text-decoration: none;
 	}
 	img {
+		image-rendering: crisp-edges;
 		filter: drop-shadow(1px 1px 3px #000000c0);
 	}
 	h1 {
