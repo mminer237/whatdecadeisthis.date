@@ -37,6 +37,9 @@ header {
 	a {
 		text-decoration: none;
 	}
+	a:hover {
+		filter: brightness(1.4);
+	}
 	img {
 		image-rendering: crisp-edges;
 		filter: drop-shadow(3px 3px 2px #000);
