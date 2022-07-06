@@ -1,7 +1,7 @@
 ---
 ---
-$dark-primary-color: #111;
-$darkish-primary-color: #222;
+$dark-primary-color: #202020;
+$darkish-primary-color: #282828;
 $primary-color: #353535;
 $lightish-primary-color: #484848;
 $light-primary-color: #606060;
@@ -12,7 +12,6 @@ $lightish-secondary-color: hsl(183, 76%, 70%);
 // $light-secondary-color: hsl(55, 100%, 80%);
 :root {
 	--text-color: white;
-	--text-background-color: $darkish-primary-color;
 }
 body {
 	accent-color: $lightish-secondary-color;
@@ -40,7 +39,7 @@ header {
 	}
 	img {
 		image-rendering: crisp-edges;
-		filter: drop-shadow(1px 1px 3px #000000c0);
+		filter: drop-shadow(3px 3px 2px #000);
 	}
 	h1 {
 		color: #EEE;
@@ -139,7 +138,7 @@ main {
 	padding-bottom: 2vw;
 }
 section, article, details {
-	background-color: var(--text-background-color);
+	background-color: $darkish-primary-color;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
 	color: var(--text-color);
 	max-width: 760px;
