@@ -151,10 +151,13 @@ section, article, details {
 		max-width: 760px;
 	}
 }
-h2, h2 a, h3, h4, h5, h6, summary {
+h2, h2 a, h3, h4, h5, h6, summary, dt {
 	color: $secondary-color;
 	font-weight: bold;
 	margin: 0 0 15px 0;
+}
+dt {
+	margin: 10px 0 10px 20px;
 }
 h2, summary {
 	font-size: 24px;
