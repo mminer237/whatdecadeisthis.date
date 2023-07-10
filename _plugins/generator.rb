@@ -87,6 +87,13 @@ module Jekyll
 			self.data['first_year'] = Integer(decade_name.rpartition('s').first)
 			self.data['close_ordinal_url'] = close_ordinal_name[0..-3-1]
 			self.data['close_ordinal'] = close_ordinal_name.partition('-').first
+
+			article = site.collections['decades'].docs.find { |page| page.basename_without_ext == decade_name }
+			if article
+				self.data['named_decade'] = {}
+				self.data['named_decade']['name'] = article.data['title']
+				self.data['named_decade']['article'] = article.content
+			end
 		end
 	end
 
