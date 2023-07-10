@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<section>
+	<h2>The {{ page.title }}</h2>
+	{{ content }}
+	{% if page.named_decade %}
+		<p>The {{ page.title }} are also known as the <a href="{{ page.named_decade.url }}">{{ page.named_decade.title }}</a>.</p>
+	{% endif %}
+	{{ page.article }}
+</section>

@@ -2,25 +2,22 @@
 layout: default
 ---
 
-<section>
-	<h2>The {{ page.title }}</h2>
-	<p>The {{ page.decade }}{{ page.ordinal }} decade is an <a href="{% link _pages/ordinal-decade.html %}">ordinal decade</a>, which contains ten years:</p>
-	<ul>
-		{%- assign base = page.decade | minus: 1 %}
-		{% for i in (1..9) -%}
-			{%- assign year = base | times: 10 | plus: i -%}
-			{%- if year == 404 -%}
-				<li><a href="/year-404">404</a></li>
-			{%- else -%}
-				<li><a href="/{{ year }}">{{ year }}</a></li>
-			{%- endif -%}
-		{%- endfor %}
-		<li><a href="/{{ page.decade }}0">{{ page.decade }}0</a></li>
-	</ul>
-	{%- if page.decade == 1 -%}
-		{% assign close_cardinal = 0 %}
-	{%- else -%}
-		{% assign close_cardinal = page.decade | minus: 1 | append: 0 %}
-	{%- endif %}
-	<p>It largely overlaps with and is confused with the <a href="/{{ close_cardinal }}s">{{ close_cardinal }}s</a>.</p>
-</section>
+<p>The {{ page.decade }}{{ page.ordinal }} decade is an <a href="{% link _pages/ordinal-decade.html %}">ordinal decade</a>, which contains ten years:</p>
+<ul>
+	{%- assign base = page.decade | minus: 1 %}
+	{% for i in (1..9) -%}
+		{%- assign year = base | times: 10 | plus: i -%}
+		{%- if year == 404 -%}
+			<li><a href="/year-404">404</a></li>
+		{%- else -%}
+			<li><a href="/{{ year }}">{{ year }}</a></li>
+		{%- endif -%}
+	{%- endfor %}
+	<li><a href="/{{ page.decade }}0">{{ page.decade }}0</a></li>
+</ul>
+{%- if page.decade == 1 -%}
+	{% assign close_cardinal = 0 %}
+{%- else -%}
+	{% assign close_cardinal = page.decade | minus: 1 | append: 0 %}
+{%- endif %}
+<p>It largely overlaps with and is confused with the <a href="/{{ close_cardinal }}s">{{ close_cardinal }}s</a>.</p>

@@ -19,6 +19,11 @@ defaults:
       layout: "default"
   -
     scope:
+      type: "named_decades"
+    values:
+      layout: "named-decade"
+  -
+    scope:
       path: "_tv/*/"
     values:
       layout: "tv-episode"
@@ -34,6 +39,9 @@ collections:
     permalink: /:name
   decades:
     output: false
+  named_decades:
+    output: true
+    permalink: /:name
   tv:
     output: true
     permalink: /:collection/:path

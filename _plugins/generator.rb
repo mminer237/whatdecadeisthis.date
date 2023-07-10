@@ -58,42 +58,50 @@ module Jekyll
 		end
 	end
 
-	class OrdinalDecadePage < Page
-		def initialize(site, base, dir, name, decade)
+	class DecadePage < Page
+		def initialize(site, base, dir, name)
 			@site = site
 			@base = base
 			@dir = dir
 			@name = name
 			self.process(@name)
+
+			named_decades = site.collections['named_decades'].docs.filter { |page| page.data['decade'] == self.data['title'] }
+			named_decades.each do |named_decade|
+				self.data['named_decade'] = {}
+				self.data['named_decade']['title'] = named_decade.data['title']
+				self.data['named_decade']['url'] = named_decade.url
+			end
+
+			article = site.collections['decades'].docs.find { |page| page.basename_without_ext == self.data['title'] }
+			if article
+				self.data['article'] = article.content
+			end
+		end
+	end
+
+	class OrdinalDecadePage < DecadePage
+		def initialize(site, base, dir, name, decade)
 			self.data ||= {}
 			self.data['layout'] = 'ordinal-decade'
 			self.data['ordinal'] = Jekyll.ordinal(decade)
 			self.data['title'] = "#{decade}#{self.data['ordinal']} Decade"
 			self.data['decade'] = decade
+			
+			super(site, base, dir, name)
 		end
 	end
 
-	class CardinalDecadePage < Page
-		def initialize(site, base, dir, name, close_ordinal_name)
-			@site = site
-			@base = base
-			@dir = dir
-			@name = name
-			self.process(@name)
-			self.data ||= {}
+	class CardinalDecadePage < DecadePage
+		def initialize(site, base, dir, name, close_ordinal_name)self.data ||= {}
 			self.data['layout'] = 'cardinal-decade'
 			decade_name = name.rpartition('.').first
 			self.data['title'] = decade_name
 			self.data['first_year'] = Integer(decade_name.rpartition('s').first)
 			self.data['close_ordinal_url'] = close_ordinal_name[0..-3-1]
 			self.data['close_ordinal'] = close_ordinal_name.partition('-').first
-
-			article = site.collections['decades'].docs.find { |page| page.basename_without_ext == decade_name }
-			if article
-				self.data['named_decade'] = {}
-				self.data['named_decade']['name'] = article.data['title']
-				self.data['named_decade']['article'] = article.content
-			end
+			
+			super(site, base, dir, name)
 		end
 	end
 

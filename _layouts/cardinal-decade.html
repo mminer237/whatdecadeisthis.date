@@ -1,35 +1,27 @@
 ---
-layout: default
+layout: decade
 ---
 
-<section>
-	<h2>The {{ page.title }}</h2>
-	<p>The {{ page.title }} is a <a href="{% link _pages/cardinal-decade.html %}">cardinal decade</a>, which contains
-		{% if page.first_year == 0 -%}
-			nine
-		{%- else -%}
-			ten
-		{%- endif %}
-		years:</p>
-	<ul>
-		{% for i in (0..9) -%}
-			{%- assign year = page.first_year | plus: i -%}
-			{%- if year != 0 -%}
-				{%- if year == 404 -%}
-					<li><a href="/year-404">404</a></li>
-				{%- else -%}
-					<li><a href="/{{ year }}">{{ year }}</a></li>
-				{%- endif -%}
-			{%- endif -%}
-		{%- endfor %}
-	</ul>
+<p>The {{ page.title }} is a <a href="{% link _pages/cardinal-decade.html %}">cardinal decade</a>, which contains
 	{% if page.first_year == 0 -%}
-		<p>Note that <a href="/0">there is no year 0</a>.</p>
+		nine
+	{%- else -%}
+		ten
 	{%- endif %}
-	<p>It largely overlaps with and is confused with the <a href="/{{ page.close_ordinal_url }}">{{ page.close_ordinal }} decade</a>.</p>
-	{% if page.named_decade %}
-		<h3>{{ page.named_decade.name }}</h3>
-		<p>The {{ page.title }} are also known as the {{ page.named_decade.name }}.</p>
-		{{ page.named_decade.article }}
-	{% endif %}
-</section>
+	years:</p>
+<ul>
+	{% for i in (0..9) -%}
+		{%- assign year = page.first_year | plus: i -%}
+		{%- if year != 0 -%}
+			{%- if year == 404 -%}
+				<li><a href="/year-404">404</a></li>
+			{%- else -%}
+				<li><a href="/{{ year }}">{{ year }}</a></li>
+			{%- endif -%}
+		{%- endif -%}
+	{%- endfor %}
+</ul>
+{% if page.first_year == 0 -%}
+	<p>Note that <a href="/0">there is no year 0</a>.</p>
+{%- endif %}
+<p>It largely overlaps with and is confused with the <a href="/{{ page.close_ordinal_url }}">{{ page.close_ordinal }} decade</a>.</p>
