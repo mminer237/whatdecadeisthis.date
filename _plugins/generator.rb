@@ -93,7 +93,8 @@ module Jekyll
 	end
 
 	class CardinalDecadePage < DecadePage
-		def initialize(site, base, dir, name, close_ordinal_name)self.data ||= {}
+		def initialize(site, base, dir, name, close_ordinal_name)
+			self.data ||= {}
 			self.data['layout'] = 'cardinal-decade'
 			decade_name = name.rpartition('.').first
 			self.data['title'] = decade_name
